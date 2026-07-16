@@ -1,0 +1,42 @@
+name: Comment Moderation Bot
+
+on:
+  schedule:
+    # Every 4 hours
+    - cron: "0 */4 * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  moderate-and-reply:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install Python deps
+        run: pip install google-auth google-api-python-client
+
+      - name: Run comment bot
+        working-directory: scripts
+        env:
+          YOUTUBE_CLIENT_ID: ${{ secrets.YOUTUBE_CLIENT_ID }}
+          YOUTUBE_CLIENT_SECRET: ${{ secrets.YOUTUBE_CLIENT_SECRET }}
+          YOUTUBE_REFRESH_TOKEN: ${{ secrets.YOUTUBE_REFRESH_TOKEN }}
+        run: python comment_bot.py
+
+      - name: Commit updated comment state
+        run: |
+          git config user.name "sports-recap-bot"
+          git config user.email "actions@github.com"
+          git add scripts/state/processed_comments.json
+          git diff --cached --quiet || git commit -m "Update processed comments state"
+          git push

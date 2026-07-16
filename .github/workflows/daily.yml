@@ -36,7 +36,7 @@ jobs:
           YOUTUBE_CLIENT_SECRET: ${{ secrets.YOUTUBE_CLIENT_SECRET }}
           YOUTUBE_REFRESH_TOKEN: ${{ secrets.YOUTUBE_REFRESH_TOKEN }}
           PRIVACY_STATUS: "unlisted"
-        run: python main.py nba nfl mlb
+        run: python main.py nba nfl mlb epl
 
       - name: Commit new blog posts
         run: |

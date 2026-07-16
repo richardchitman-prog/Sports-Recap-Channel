@@ -51,7 +51,7 @@ MAX_VIDEO_SECONDS = 90
 
 # Where output files land before upload
 OUTPUT_DIR = "output"
-BLOG_DIR = "blog/_posts"
+BLOG_DIR = "docs/_posts"
 
 # Background music: put your own free-license mp3s here (see assets/music/README.md)
 MUSIC_DIR = "assets/music"

@@ -23,13 +23,21 @@ LEAGUES = {
         "official_channel_handle": "@NFL",
         "color": "#013369",
     },
-    "mlb": {
+   "mlb": {
         "name": "MLB",
         "espn_sport": "baseball",
         "espn_league": "mlb",
         "official_channel_id": "UCoLrcjPV5PbUrUyXq5mjc_A",  # youtube.com/@MLB
         "official_channel_handle": "@MLB",
         "color": "#041E42",
+    },
+    "epl": {
+        "name": "Premier League",
+        "espn_sport": "soccer",
+        "espn_league": "eng.1",
+        "official_channel_id": "UCG5qGWdu8nIRZqJ_GgDwQ-w",  # youtube.com/@premierleague
+        "official_channel_handle": "@premierleague",
+        "color": "#3D195B",
     },
 }
 

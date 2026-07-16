@@ -42,6 +42,6 @@ jobs:
         run: |
           git config user.name "sports-recap-bot"
           git config user.email "actions@github.com"
-          git add blog/_posts
+          git add docs/_posts
           git diff --cached --quiet || git commit -m "Daily recap: $(date -u +%Y-%m-%d)"
           git push

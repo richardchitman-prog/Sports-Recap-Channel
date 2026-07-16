@@ -35,7 +35,7 @@ jobs:
           YOUTUBE_CLIENT_ID: ${{ secrets.YOUTUBE_CLIENT_ID }}
           YOUTUBE_CLIENT_SECRET: ${{ secrets.YOUTUBE_CLIENT_SECRET }}
           YOUTUBE_REFRESH_TOKEN: ${{ secrets.YOUTUBE_REFRESH_TOKEN }}
-          PRIVACY_STATUS: "unlisted"
+          PRIVACY_STATUS: "public"
         run: python main.py nba nfl mlb epl worldcup
 
       - name: Commit new blog posts

@@ -39,6 +39,14 @@ LEAGUES = {
         "official_channel_handle": "@premierleague",
         "color": "#3D195B",
     },
+    "worldcup": {
+        "name": "FIFA World Cup",
+        "espn_sport": "soccer",
+        "espn_league": "fifa.world",
+        "official_channel_id": "UCpcTrCXblq78GZrTUTLWeBw",  # youtube.com/@fifa
+        "official_channel_handle": "@fifa",
+        "color": "#326295",
+    },
 }
 
 # ESPN's public scoreboard/summary JSON endpoints (no API key required).

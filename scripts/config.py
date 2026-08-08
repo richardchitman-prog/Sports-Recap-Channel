@@ -66,8 +66,11 @@ VIDEO_FPS = 30
 MAX_VIDEO_SECONDS = 90
 
 # Where output files land before upload
-OUTPUT_DIR = "output"
-BLOG_DIR = "docs/_posts"
+# (absolute paths so this works no matter which directory the script runs from)
+import os as _os
+_REPO_ROOT = _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__)))
+OUTPUT_DIR = _os.path.join(_REPO_ROOT, "output")
+BLOG_DIR = _os.path.join(_REPO_ROOT, "docs", "_posts")
 
 # Background music: put your own free-license mp3s here (see assets/music/README.md)
 MUSIC_DIR = "assets/music"
